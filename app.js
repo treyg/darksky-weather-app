@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
 
 
     if(navigator.geolocation){
-        //if user allows location access
+        //if user allows location access 
         navigator.geolocation.getCurrentPosition(position => {
             //run function to get latitude and longitude of user
             long = position.coords.longitude
@@ -33,6 +33,7 @@ window.addEventListener('load', () => {
                 //set DOM elements from the API
                 temperatureDegree.textContent = temperature
                 temperatureDescription.textContent = summary
+                locationTimezone.textContent = data.timezone
             })
         })
 
