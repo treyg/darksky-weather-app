@@ -7,37 +7,67 @@
 body {
     height: 100vh;
     display: flex;
-    justify-content: center;
+    
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
-    font-family: sans-serif;
+    background: #72AAFF;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(45.34deg, #1D2252 5.66%, #72AAFF 50.01%, #00FFFF 94.35%);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(45.34deg, #1D2252 5.66%, #72AAFF 50.01%, #00FFFF 94.35%);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 62%;
     color: white;
+    background-image: url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80');
 }
 
-.location, .temperature {
-    height: 30vh;
+h1 {
+    font-size: 1.8em;
+}
+
+.location {
     width: 50%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
+    margin-top: 20%;
+    /* border: 2px solid red; */
 }
 
 .temperature {
+    height: 30vh;
+    width: 50%;
+    display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: 2px solid black; */
 }
+
 
 .degree-section {
     display: flex;
     align-items: center;
     cursor: pointer;
+    /* border: 2px solid blue; */
 }
 
 .degree-section span {
-    margin: 10px;
-    font-size: 30px;
+    margin: .5em;
+    font-size: 2em;
 }
 
 .degree-section h2 {
-    font-size: 40px;
+    font-size: 7em;
+}
+
+.temperature-description {
+    margin-top: 2em;
+    font-size: 2em;
+}
+
+.daily-description {
+    margin-top: 1em;
+    font-size: 1.6em;
 }
