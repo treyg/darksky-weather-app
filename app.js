@@ -34,7 +34,7 @@ window.addEventListener('load', () => {
                 const {temperature, summary, icon} = data.currently //pull temperature from data.currently
 
                 //set DOM elements from the API
-                temperatureDegree.textContent = temperature
+                temperatureDegree.textContent = Math.floor(temperature)
                 temperatureDescription.textContent = summary
                 locationTimezone.textContent = data.timezone
                 dailyDescription.textContent = data.hourly.summary
