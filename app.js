@@ -68,4 +68,14 @@ window.addEventListener('load', () => {
         h1.textContent = `Hey this isn't working because you didn't allow location access`
         //If user denies access to location, alert them that app won't work
     }
+
+    if (summary = "Overcast" || "Mostly Cloudy" || "Partly Cloudy") {
+        document.body.style.background = "url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80')"
+    } else if (summary = "Drizzle" || "Light Rain") {
+        document.body.style.background = "url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80')"
+    } else if (summary = "Sunny"){
+        document.body.style.background = "url('https://images.unsplash.com/photo-1531147646552-1eec68116469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')"
+    } else {
+        document.body.style.background = "url('https://images.unsplash.com/photo-1531147646552-1eec68116469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')"
+    }
 })
