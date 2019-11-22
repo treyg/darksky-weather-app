@@ -9,6 +9,7 @@ window.addEventListener('load', () => {
     const temperatureSection = document.querySelector('.temperature')
     const temperatureSpan = document.querySelector('.temperature span')
     const dailyDescription = document.querySelector('.daily-description')
+    const mon = document.querySelector('.mon')
 
 
 
@@ -39,10 +40,15 @@ window.addEventListener('load', () => {
                 locationTimezone.textContent = data.timezone
                 dailyDescription.textContent = data.hourly.summary
 
+                // Set weekly elements fromt the DOM
+                mon.textContent = data.daily.data[0].icon
+
+                //Set Icon
+                 setIcons(icon, document.querySelector('.icon'))
+                
                 //Formula for Celsius
                 let celsius = (temperature - 32) * (5 / 9)
-                    //Set Icon
-                    setIcons(icon, document.querySelector('.icon'))
+                   
 
                 //Change temperature to celsius/fahrenheit
                 temperatureSection.addEventListener('click', () => {
@@ -64,10 +70,7 @@ window.addEventListener('load', () => {
             skycons.set(iconID, Skycons[currentIcon]) //set the icon to current icon to run in function
         }
 
-    } else {
-        h1.textContent = `Must be you didn't allow location access?`
-        //If user denies access to location, alert them that app won't work
-    }
+    } 
 
     if (summary = "Overcast" || "Mostly Cloudy" || "Partly Cloudy") {
         document.body.style.background = "url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80')"
