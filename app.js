@@ -65,7 +65,7 @@ window.addEventListener('load', () => {
         }
 
     } else {
-        h1.textContent = `Hey this isn't working because you didn't allow location access`
+        h1.textContent = `Must be you didn't allow location access?`
         //If user denies access to location, alert them that app won't work
     }
 
