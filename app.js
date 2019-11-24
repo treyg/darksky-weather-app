@@ -10,6 +10,13 @@ window.addEventListener('load', () => {
     const temperatureSpan = document.querySelector('.temperature span')
     const dailyDescription = document.querySelector('.daily-description')
     const mon = document.querySelector('.mon')
+    const tues = document.querySelector('.tues')
+    const wed = document.querySelector('.wed')
+    const thurs = document.querySelector('.thurs')
+    const fri = document.querySelector('.fri')
+    const sat = document.querySelector('.sat')
+    const sun = document.querySelector('.sun')
+
 
 
 
@@ -42,6 +49,13 @@ window.addEventListener('load', () => {
 
                 // Set weekly elements fromt the DOM
                 mon.textContent = data.daily.data[0].icon
+                tues.textContent = data.daily.data[1].icon
+                wed.textContent = data.daily.data[2].icon
+                thurs.textContent = data.daily.data[3].icon
+                fri.textContent = data.daily.data[4].icon
+                sat.textContent = data.daily.data[5].icon
+                sun.textContent = data.daily.data[6].icon
+
 
                 //Set Icon
                  setIcons(icon, document.querySelector('.icon'))
@@ -72,8 +86,10 @@ window.addEventListener('load', () => {
 
     } 
 
-    if (summary = "Overcast" || "Mostly Cloudy" || "Partly Cloudy") {
+    if (summary = "Overcast" || "Mostly Cloudy") {
         document.body.style.background = "url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80')"
+    } else if (summary = "Partly Cloudy") {
+        document.body.style.background = "url('https://turntable.kagiso.io/images/partly-cloudy-1173077-639x447.width-800.jpg')"
     } else if (summary = "Drizzle" || "Light Rain") {
         document.body.style.background = "url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80')"
     } else if (summary = "Sunny"){
