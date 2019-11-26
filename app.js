@@ -74,13 +74,13 @@ window.addEventListener('load', () => {
                 })
 
                 //Set background dependent on weather
-                if (summary == "Overcast" || "Mostly Cloudy") {
-                    document.body.style.background = "url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80')"
-                } else if (summary == "Partly Cloudy") {
+                if (icon== "cloudy") {
+                    document.body.style.background = "url('https://images.unsplash.com/photo-1479688895406-3f032f15f0ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')"
+                } else if (icon == "partly-cloudy-day") {
                     document.body.style.background = "url('https://turntable.kagiso.io/images/partly-cloudy-1173077-639x447.width-800.jpg')"
-                } else if (summary == "Drizzle" || "Light Rain") {
-                    document.body.style.background = "url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80')"
-                } else if (summary == "Sunny" || "Clear"){
+                } else if (icon == "rain") {
+                    document.body.style.background = "url('https://images.unsplash.com/photo-1417008914239-59b898b49382?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1364&q=80')"
+                } else if (icon == "sunny" || icon == "clear-day"){
                     document.body.style.background = "url('https://images.unsplash.com/photo-1531147646552-1eec68116469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')"
                 } else {
                     document.body.style.background = "url('https://images.unsplash.com/photo-1531147646552-1eec68116469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')"
