@@ -18,8 +18,6 @@ window.addEventListener('load', () => {
     const sun = document.querySelector('.sun')
 
 
-
-
     if(navigator.geolocation){
         //if user allows location access 
         navigator.geolocation.getCurrentPosition(position => {
