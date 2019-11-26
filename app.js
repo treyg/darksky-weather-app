@@ -72,6 +72,21 @@ window.addEventListener('load', () => {
                         temperatureDegree.textContent = Math.floor(temperature)
                     }
                 })
+
+                //Set background dependent on weather
+                if (summary == "Overcast" || "Mostly Cloudy") {
+                    document.body.style.background = "url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80')"
+                } else if (summary == "Partly Cloudy") {
+                    document.body.style.background = "url('https://turntable.kagiso.io/images/partly-cloudy-1173077-639x447.width-800.jpg')"
+                } else if (summary == "Drizzle" || "Light Rain") {
+                    document.body.style.background = "url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80')"
+                } else if (summary == "Sunny" || "Clear"){
+                    document.body.style.background = "url('https://images.unsplash.com/photo-1531147646552-1eec68116469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')"
+                } else {
+                    document.body.style.background = "url('https://images.unsplash.com/photo-1531147646552-1eec68116469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')"
+                }
+
+
             })
         })
 
@@ -84,15 +99,5 @@ window.addEventListener('load', () => {
 
     } 
 
-    if (summary = "Overcast" || "Mostly Cloudy") {
-        document.body.style.background = "url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80')"
-    } else if (summary = "Partly Cloudy") {
-        document.body.style.background = "url('https://turntable.kagiso.io/images/partly-cloudy-1173077-639x447.width-800.jpg')"
-    } else if (summary = "Drizzle" || "Light Rain") {
-        document.body.style.background = "url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=689&q=80')"
-    } else if (summary = "Sunny"){
-        document.body.style.background = "url('https://images.unsplash.com/photo-1531147646552-1eec68116469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')"
-    } else {
-        document.body.style.background = "url('https://images.unsplash.com/photo-1531147646552-1eec68116469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')"
-    }
+   
 })
