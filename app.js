@@ -9,13 +9,13 @@ window.addEventListener('load', () => {
     const temperatureSection = document.querySelector('.temperature')
     const temperatureSpan = document.querySelector('.temperature span')
     const dailyDescription = document.querySelector('.daily-description')
-    const mon = document.querySelector('.mon')
-    const tues = document.querySelector('.tues')
-    const wed = document.querySelector('.wed')
-    const thurs = document.querySelector('.thurs')
-    const fri = document.querySelector('.fri')
-    const sat = document.querySelector('.sat')
-    const sun = document.querySelector('.sun')
+    const oneDayFromNow = document.querySelector('.oneDayFromNow')
+    const twoDaysFromNow = document.querySelector('.twoDaysFromNow')
+    const threeDaysFromNow = document.querySelector('.threeDaysFromNow')
+    const fourDaysFromNow = document.querySelector('.fourDaysFromNow')
+    const fiveDaysFromNow = document.querySelector('.fiveDaysFromNow')
+    const sixDaysFromNow = document.querySelector('.sixDaysFromNow')
+    const sevenDaysFromNow = document.querySelector('.sevenDaysFromNow')
 
 
     if(navigator.geolocation){
@@ -46,17 +46,49 @@ window.addEventListener('load', () => {
                 dailyDescription.textContent = data.hourly.summary
 
                 // Set weekly elements fromt the DOM
-                mon.textContent = data.daily.data[0].icon
-                tues.textContent = data.daily.data[1].icon
-                wed.textContent = data.daily.data[2].icon
-                thurs.textContent = data.daily.data[3].icon
-                fri.textContent = data.daily.data[4].icon
-                sat.textContent = data.daily.data[5].icon
-                sun.textContent = data.daily.data[6].icon
+                oneDayFromNow.textContent = data.daily.data[0].summary
+                twoDaysFromNow.textContent = data.daily.data[1].summary
+                threeDaysFromNow.textContent = data.daily.data[2].summary
+                fourDaysFromNow.textContent = data.daily.data[3].summary
+                fiveDaysFromNow.textContent = data.daily.data[4].summary
+                sixDaysFromNow.textContent = data.daily.data[5].summary
+                sevenDaysFromNow.textContent = data.daily.data[6].summary
 
+                // Set daily summaries for coming week
+                // Day 1 - Today
+                const dayOneDiv = document.createElement('span') //Create a div to append date to the DOM
+                dayOneDiv.innerHTML = new Date(data.daily.data[0].time * 1000).toString().slice(0, 10) //Set the HTML to show date from unix code taken from daily object
+                oneDayFromNow.appendChild(dayOneDiv)//Append the date to the oneDayFromNow div
+                // Day 2
+                const dayTwoDiv = document.createElement('span')
+                dayTwoDiv.innerHTML = new Date(data.daily.data[1].time * 1000).toString().slice(0, 10)
+                twoDaysFromNow.appendChild(dayTwoDiv)
+                // Day 3
+                const dayThreeDiv = document.createElement('span')
+                dayThreeDiv.innerHTML = new Date(data.daily.data[2].time * 1000).toString().slice(0, 10)
+                threeDaysFromNow.appendChild(dayThreeDiv)
+                // Day 4
+                const dayFourDiv = document.createElement('span')
+                dayFourDiv.innerHTML = new Date(data.daily.data[3].time * 1000).toString().slice(0, 10)
+                fourDaysFromNow.appendChild(dayFourDiv)
+                // Day 5
+                const dayFiveDiv = document.createElement('span')
+                dayFiveDiv.innerHTML = new Date(data.daily.data[4].time * 1000).toString().slice(0, 10)
+                fiveDaysFromNow.appendChild(dayFiveDiv)
+                // Day 6
+                const daySixDiv = document.createElement('span')
+                daySixDiv.innerHTML = new Date(data.daily.data[5].time * 1000).toString().slice(0, 10)
+                sixDaysFromNow.appendChild(daySixDiv)
+                // Day 7
+                const daySevenDiv = document.createElement('span')
+                daySevenDiv.innerHTML = new Date(data.daily.data[6].time * 1000).toString().slice(0, 10)
+                sevenDaysFromNow.appendChild(daySevenDiv)
 
+               
+                
                 //Set Icon
                  setIcons(icon, document.querySelector('.icon'))
+                 
                 
                 //Formula for Celsius
                 let celsius = (temperature - 32) * (5 / 9)
@@ -78,11 +110,25 @@ window.addEventListener('load', () => {
                     document.body.style.background = "url('https://images.unsplash.com/photo-1479688895406-3f032f15f0ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')"
                 } else if (icon == "partly-cloudy-day") {
                     document.body.style.background = "url('https://turntable.kagiso.io/images/partly-cloudy-1173077-639x447.width-800.jpg')"
-                } else if (icon == "rain") {
+                } else if (icon == "partly-cloudy-night"){
+                    document.body.style.background = "url('https://i.pinimg.com/originals/82/82/6c/82826c36941bafde93f3598ac41931b6.jpg')"
+                }  else if (icon == "rain") {
                     document.body.style.background = "url('https://images.unsplash.com/photo-1417008914239-59b898b49382?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1364&q=80')"
-                } else if (icon == "sunny" || icon == "clear-day"){
+                }  else if (icon == "sunny" || icon == "clear-day"){
                     document.body.style.background = "url('https://images.unsplash.com/photo-1531147646552-1eec68116469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')"
-                } else {
+                } else if (icon == "clear-night"){
+                    document.body.style.background = "url('https://cdn.pixabay.com/photo/2017/06/08/06/03/british-columbia-2382640_960_720.jpg')"
+                } else if (icon == "snow"){
+                    document.body.style.background = "url('https://cdn.pixabay.com/photo/2018/12/09/09/15/christmas-3864552_960_720.jpg')"
+                } else if (icon == "sleet" || icon == "hail"){
+                    document.body.style.background = "url('https://cdn.britannica.com/67/123867-050-9D287BC3/Sleet-ground.jpg')"
+                } else if (icon == "wind"){
+                    document.body.style.background = "url('https://cdn.pixabay.com/photo/2019/01/26/18/41/trees-3956743_960_720.jpg')"
+                } else if (icon == "fog"){
+                    document.body.style.background = "url('https://cdn.pixabay.com/photo/2019/08/28/12/20/landscape-4436636_960_720.jpg')"
+                } else if (icon == "thunderstorm"){
+                    document.body.style.background = "url('https://i.pinimg.com/originals/ce/4c/e3/ce4ce321f2729bdaf2c2f0272987301a.jpg')"
+                }  else {
                     document.body.style.background = "url('https://images.unsplash.com/photo-1531147646552-1eec68116469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')"
                 }
 

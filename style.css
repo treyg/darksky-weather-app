@@ -67,25 +67,29 @@ h1 {
 }
 
 .daily-description {
-    margin-top: 3.5em;
+    margin-top: .5em;
     font-size: 1.6em;
     text-align: center;
 }
 
-.weekly {
-    height: 100px;
-    width: 85%;
+.weekly { 
+    width: 95%;
     display: flex;
-    flex-direction: row;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.404);
+    display: flex;
+    flex-direction: column;
 }
 
-.mon, .tues, .wed, .thurs, .fri, .sat, .sun {
+.weekly > div {
     color: black;
-    font-size: 1.1em;
-    margin-right: 5px;
+    font-size: 1.3em;
+    padding: 10px 5px;
     text-align: center;
     margin-top: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between ;
+   
 }
 
