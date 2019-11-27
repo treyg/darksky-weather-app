@@ -15,7 +15,6 @@ body {
     background: -webkit-linear-gradient(45.34deg, #1D2252 5.66%, #72AAFF 50.01%, #00FFFF 94.35%);
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(45.34deg, #1D2252 5.66%, #72AAFF 50.01%, #00FFFF 94.35%);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-family: 'Montserrat', sans-serif;
     font-size: 62%;
     color: white;
@@ -85,7 +84,7 @@ h1 {
 .weekly > div {
     color: black;
     font-size: 1.3em;
-    padding: 10px 5px;
+    padding: 12px 8px;
     text-align: center;
     margin-top: auto;
     display: flex;
