@@ -129,11 +129,11 @@ window.addEventListener('load', () => {
                       "wind" : "bg-wind",
                       "fog" : "bg-fog",
                       "thunderstorm" : "bg-thunderstorm"
-
-                      
                     };
                     document.body.className = backgrounds[icon] || "bg-default";
                   }
+
+                  setBackground(icon)
 
 
                 // if (icon== "cloudy") {
