@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     display: flex;
-    
+    background-size: cover;
     flex-direction: column;
     align-items: center;
     background: #72AAFF;
@@ -93,3 +93,51 @@ h1 {
    
 }
 
+.bg-default {
+    background-image: url('https://images.unsplash.com/photo-1531147646552-1eec68116469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+}
+
+
+.bg-cloudy {
+    background-image: url('https://images.unsplash.com/photo-1479688895406-3f032f15f0ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+}
+
+.bg-partly-cloudy-day {
+    background-image: url('https://turntable.kagiso.io/images/partly-cloudy-1173077-639x447.width-800.jpg');
+}
+
+.bg-partly-cloudy-night {
+    background-image: url('https://i.pinimg.com/originals/82/82/6c/82826c36941bafde93f3598ac41931b6.jpg');
+}
+
+.bg-rain {
+    background-image: url('https://images.unsplash.com/photo-1417008914239-59b898b49382?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1364&q=80');
+}
+
+.bg-sunny {
+    background-image: url('https://images.unsplash.com/photo-1531147646552-1eec68116469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+}
+
+.bg-clear-night {
+    background-image: url('https://cdn.pixabay.com/photo/2017/06/08/06/03/british-columbia-2382640_960_720.jpg');
+}
+
+.bg-snow {
+    background-image: url('https://cdn.pixabay.com/photo/2018/12/09/09/15/christmas-3864552_960_720.jpg');
+}
+
+.bg-sleet {
+    background-image: url('https://cdn.britannica.com/67/123867-050-9D287BC3/Sleet-ground.jpg');
+}
+
+.bg-wind {
+    background-image: url('https://cdn.pixabay.com/photo/2019/01/26/18/41/trees-3956743_960_720.jpg');
+}
+
+.bg-fog {
+    background-image: url('https://cdn.pixabay.com/photo/2019/08/28/12/20/landscape-4436636_960_720.jpg');
+}
+
+.bg-thunderstorm {
+    background-image: url('https://i.pinimg.com/originals/ce/4c/e3/ce4ce321f2729bdaf2c2f0272987301a.jpg');
+}
