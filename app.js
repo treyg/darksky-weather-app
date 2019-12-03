@@ -16,6 +16,7 @@ window.addEventListener('load', () => {
     const fiveDaysFromNow = document.querySelector('.fiveDaysFromNow')
     const sixDaysFromNow = document.querySelector('.sixDaysFromNow')
     const sevenDaysFromNow = document.querySelector('.sevenDaysFromNow')
+    const currentDate = document.querySelector('.current-date')
 
 
     if(navigator.geolocation){
@@ -46,49 +47,49 @@ window.addEventListener('load', () => {
                 dailyDescription.textContent = data.hourly.summary
 
                 // Set weekly elements fromt the DOM
-                oneDayFromNow.textContent = `${Math.floor(data.daily.data[0].apparentTemperatureMax)}°F / ${Math.floor(data.daily.data[0].apparentTemperatureMin)}°F`
-                twoDaysFromNow.textContent = `${Math.floor(data.daily.data[1].apparentTemperatureMax)}°F / ${Math.floor(data.daily.data[1].apparentTemperatureMin)}°F`
-                threeDaysFromNow.textContent = `${Math.floor(data.daily.data[2].apparentTemperatureMax)}°F / ${Math.floor(data.daily.data[2].apparentTemperatureMin)}°F`
-                fourDaysFromNow.textContent = `${Math.floor(data.daily.data[3].apparentTemperatureMax)}°F / ${Math.floor(data.daily.data[3].apparentTemperatureMin)}°F`
-                fiveDaysFromNow.textContent = `${Math.floor(data.daily.data[4].apparentTemperatureMax)}°F / ${Math.floor(data.daily.data[4].apparentTemperatureMin)}°F`
-                sixDaysFromNow.textContent = `${Math.floor(data.daily.data[5].apparentTemperatureMax)}°F / ${Math.floor(data.daily.data[5].apparentTemperatureMin)}°F`
-                sevenDaysFromNow.textContent = `${Math.floor(data.daily.data[6].apparentTemperatureMax)}°F / ${Math.floor(data.daily.data[6].apparentTemperatureMin)}°F`
+                oneDayFromNow.textContent = `${Math.floor(data.daily.data[0].apparentTemperatureMax)}° / ${Math.floor(data.daily.data[0].apparentTemperatureMin)}°`
+                twoDaysFromNow.textContent = `${Math.floor(data.daily.data[1].apparentTemperatureMax)}° / ${Math.floor(data.daily.data[1].apparentTemperatureMin)}°`
+                threeDaysFromNow.textContent = `${Math.floor(data.daily.data[2].apparentTemperatureMax)}° / ${Math.floor(data.daily.data[2].apparentTemperatureMin)}°`
+                fourDaysFromNow.textContent = `${Math.floor(data.daily.data[3].apparentTemperatureMax)}° / ${Math.floor(data.daily.data[3].apparentTemperatureMin)}°`
+                fiveDaysFromNow.textContent = `${Math.floor(data.daily.data[4].apparentTemperatureMax)}° / ${Math.floor(data.daily.data[4].apparentTemperatureMin)}°`
+                sixDaysFromNow.textContent = `${Math.floor(data.daily.data[5].apparentTemperatureMax)}° / ${Math.floor(data.daily.data[5].apparentTemperatureMin)}°`
+                sevenDaysFromNow.textContent = `${Math.floor(data.daily.data[6].apparentTemperatureMax)}° / ${Math.floor(data.daily.data[6].apparentTemperatureMin)}°`
 
                 // Set daily summaries for coming week
              
                 // Day 1 - Today
                 const dayOneDiv = document.createElement('span') //Create a div to append date to the DOM
-                dayOneDiv.innerHTML = new Date(data.daily.data[0].time * 1000).toString().slice(0, 3) //Set the HTML to show date from unix code taken from daily object
+                dayOneDiv.innerHTML = dayjs(data.daily.data[0].time * 1000).format('dddd')//Set the HTML to show date from unix code taken from daily object
                 oneDayFromNow.appendChild(dayOneDiv)//Append the date to the oneDayFromNow div
                 // Day 2
                 const dayTwoDiv = document.createElement('span')
-                dayTwoDiv.innerHTML = new Date(data.daily.data[1].time * 1000).toString().slice(0, 3)
+                dayTwoDiv.innerHTML = dayjs(data.daily.data[1].time * 1000).format('dddd')
                 twoDaysFromNow.appendChild(dayTwoDiv)
                 // Day 3
                 const dayThreeDiv = document.createElement('span')
-                dayThreeDiv.innerHTML = new Date(data.daily.data[2].time * 1000).toString().slice(0, 3)
+                dayThreeDiv.innerHTML = dayjs(data.daily.data[2].time * 1000).format('dddd')
                 threeDaysFromNow.appendChild(dayThreeDiv)
                 // Day 4
                 const dayFourDiv = document.createElement('span')
-                dayFourDiv.innerHTML = new Date(data.daily.data[3].time * 1000).toString().slice(0, 3)
+                dayFourDiv.innerHTML = dayjs(data.daily.data[3].time * 1000).format('dddd')
                 fourDaysFromNow.appendChild(dayFourDiv)
                 // Day 5
                 const dayFiveDiv = document.createElement('span')
-                dayFiveDiv.innerHTML = new Date(data.daily.data[4].time * 1000).toString().slice(0, 3)
+                dayFiveDiv.innerHTML = dayjs(data.daily.data[4].time * 1000).format('dddd')
                 fiveDaysFromNow.appendChild(dayFiveDiv)
                 // Day 6
                 const daySixDiv = document.createElement('span')
-                daySixDiv.innerHTML = new Date(data.daily.data[5].time * 1000).toString().slice(0, 3)
+                daySixDiv.innerHTML = dayjs(data.daily.data[5].time * 1000).format('dddd')
                 sixDaysFromNow.appendChild(daySixDiv)
                 // Day 7
                 const daySevenDiv = document.createElement('span')
-                daySevenDiv.innerHTML = new Date(data.daily.data[6].time * 1000).toString().slice(0, 3)
+                daySevenDiv.innerHTML = dayjs(data.daily.data[6].time * 1000).format('dddd')
                 sevenDaysFromNow.appendChild(daySevenDiv)
 
                 //or
                 // const { daily: { data: daysOfWeekWeather } } = data;
                 // const forecastHTML = daysOfWeekWeather.reduce((html, { summary, time }, i) => {
-                // const dateText = new Date(time * 1000).toString().slice(0, 10);
+                // const dateText = new Date(time * 1000).toString().slice(0, 3);
                 // return html += `<div class="day-${i + 1}">${summary}<span>${dateText}</span></div>`;
                 // }, '');
                 // document.querySelector('.weekly').innerHTML = forecastHTML;
@@ -96,7 +97,10 @@ window.addEventListener('load', () => {
                 
                 //Set Icon
                  setIcons(icon, document.querySelector('.icon'))
-                 
+                
+                //Set current Date
+                
+                currentDate.textContent = dayjs().format('dddd, MMMM D')
                 
                 //Formula for Celsius
                 let celsius = (temperature - 32) * (5 / 9)
