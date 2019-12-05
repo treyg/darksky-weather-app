@@ -58,13 +58,15 @@ window.addEventListener('load', () => {
                 // Set daily summaries for coming week
              
                 // Day 1 - Today
-                const dayOneDiv = document.createElement('span') //Create a div to append date to the DOM
-                dayOneDiv.innerHTML = dayjs(data.daily.data[0].time * 1000).format('dddd')//Set the HTML to show date from unix code taken from daily object
-                oneDayFromNow.appendChild(dayOneDiv)//Append the date to the oneDayFromNow div
+                const dayOneDay = document.getElementById('dayOneDay'); //Create a div to append date to the DOM
+                dayOneDay.innerHTML = dayjs(data.daily.data[0].time * 1000).format('dddd')//Set the HTML to show date from unix code taken from daily object
+               
 
-                const dayOneIcon = document.createElement('span')
-                dayOneIcon = setIcons(data.daily.data[0].icon)
-                oneDayFromNow.appendChild(dayOneIcon)
+                // var skycons = new Skycons({"color": "pink"});
+                // skycons.add(document.getElementById("icon1"), Skycons.RAIN);
+                //  skycons.play();
+
+               
 
                 // Day 2
                 const dayTwoDiv = document.createElement('span')
