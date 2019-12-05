@@ -55,8 +55,7 @@ window.addEventListener('load', () => {
                 daySixTemp.textContent = `${Math.floor(data.daily.data[5].temperatureHigh)}° / ${Math.floor(data.daily.data[5].temperatureLow)}°`
                 daySevenTemp.textContent = `${Math.floor(data.daily.data[6].temperatureHigh)}° / ${Math.floor(data.daily.data[6].temperatureLow)}°`
 
-                // Set daily summaries for coming week
-             
+                // Set daily Icon, high and low for coming week
                 // Day 1 - Today
                 const dayOneDay = document.getElementById('dayOneDay'); //Create a div to append date to the DOM
                 dayOneDay.innerHTML = dayjs(data.daily.data[0].time * 1000).format('dddd')//Set the HTML to show date from unix code taken from daily object
@@ -113,8 +112,8 @@ window.addEventListener('load', () => {
                 daySevenIcon.play();
                
                 
-                //Set Icon
-                 setIcons(icon, document.querySelector('.icon'))
+                //Set Main Icon
+                 setIcons(icon, document.querySelector('.mainIcon'))
                 
                 //Set current Date
                 

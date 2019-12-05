@@ -84,7 +84,7 @@ h1 {
     /* box-shadow: 0 10px 6px -6px rgba(20, 20, 20, 0.596); */
     display: flex;
     flex-direction: column;
-    margin-top: 10em;
+  
 }
 
 
@@ -93,15 +93,26 @@ h1 {
     color: rgb(255, 255, 255);
     font-size: 1.6em;
     padding: .8em 1.2em;
-    text-align: center;
     margin-top: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between ;
-    align-items: center;
     border-bottom: .1em solid rgba(56, 56, 56, 0.24);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#dayOneDay, #dayTwoDay, #dayThreeDay, #dayFourDay, #dayFiveDay, #daySixDay, #daySevenDay {
+    width: 30%;
+}
+
+#dayOneIcon, #dayTwoIcon, #dayThreeIcon, #dayFourIcon, #dayFiveIcon, #daySixIcon, #daySevenIcon {
    
 }
+
+#dayOneTemp, #dayTwoTemp, #dayThreeTemp, #dayFourTemp, #dayFiveTemp, #daySixTemp, #daySevenTemp {
+    text-align: end;
+    width: 30%;
+}
+
 
 
 .bg-cloudy {
