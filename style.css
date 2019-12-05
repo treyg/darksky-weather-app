@@ -27,7 +27,7 @@ h1 {
     align-items: center;
     justify-content: space-between;
     margin-top: 10%;
-    
+
 }
 
 .current-date {
@@ -66,13 +66,13 @@ h1 {
 
 .temperature-description {
     font-size: 3em;
-   
 }
 
 .daily-description {
     margin-top: .5em;
     font-size: 1.6em;
     text-align: center;
+    margin-bottom: 5em;
 }
 
 .weekly { 
