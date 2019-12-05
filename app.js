@@ -21,7 +21,7 @@ window.addEventListener('load', () => {
 
     if(navigator.geolocation){
         //if user allows location access 
-        navigator.geolocation.getCurrentPosition(position => {
+        navigator.geolocation.getCurrentPosition (position => {
             //run function to get latitude and longitude of user
             long = position.coords.longitude
             //set longitude coordinates to a variable
@@ -61,6 +61,11 @@ window.addEventListener('load', () => {
                 const dayOneDiv = document.createElement('span') //Create a div to append date to the DOM
                 dayOneDiv.innerHTML = dayjs(data.daily.data[0].time * 1000).format('dddd')//Set the HTML to show date from unix code taken from daily object
                 oneDayFromNow.appendChild(dayOneDiv)//Append the date to the oneDayFromNow div
+
+                const dayOneIcon = document.createElement('span')
+                dayOneIcon = setIcons(data.daily.data[0].icon)
+                oneDayFromNow.appendChild(dayOneIcon)
+
                 // Day 2
                 const dayTwoDiv = document.createElement('span')
                 dayTwoDiv.innerHTML = dayjs(data.daily.data[1].time * 1000).format('dddd')
