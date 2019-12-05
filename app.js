@@ -9,13 +9,13 @@ window.addEventListener('load', () => {
     const temperatureSection = document.querySelector('.temperature')
     const temperatureSpan = document.querySelector('.temperature span')
     const dailyDescription = document.querySelector('.daily-description')
-    const oneDayFromNow = document.querySelector('.oneDayFromNow')
-    const twoDaysFromNow = document.querySelector('.twoDaysFromNow')
-    const threeDaysFromNow = document.querySelector('.threeDaysFromNow')
-    const fourDaysFromNow = document.querySelector('.fourDaysFromNow')
-    const fiveDaysFromNow = document.querySelector('.fiveDaysFromNow')
-    const sixDaysFromNow = document.querySelector('.sixDaysFromNow')
-    const sevenDaysFromNow = document.querySelector('.sevenDaysFromNow')
+    const dayOneTemp = document.querySelector('#dayOneTemp')
+    const dayTwoTemp = document.querySelector('#dayTwoTemp')
+    const dayThreeTemp = document.querySelector('#dayThreeTemp')
+    const dayFourTemp = document.querySelector('#dayFourTemp')
+    const dayFiveTemp = document.querySelector('#dayFiveTemp')
+    const daySixTemp = document.querySelector('#daySixTemp')
+    const daySevenTemp = document.querySelector('#daySevenTemp')
     const currentDate = document.querySelector('.current-date')
 
 
@@ -47,59 +47,70 @@ window.addEventListener('load', () => {
                 dailyDescription.textContent = data.hourly.summary
 
                 // Set weekly elements fromt the DOM
-                oneDayFromNow.textContent = `${Math.floor(data.daily.data[0].apparentTemperatureMax)}° / ${Math.floor(data.daily.data[0].apparentTemperatureMin)}°`
-                twoDaysFromNow.textContent = `${Math.floor(data.daily.data[1].apparentTemperatureMax)}° / ${Math.floor(data.daily.data[1].apparentTemperatureMin)}°`
-                threeDaysFromNow.textContent = `${Math.floor(data.daily.data[2].apparentTemperatureMax)}° / ${Math.floor(data.daily.data[2].apparentTemperatureMin)}°`
-                fourDaysFromNow.textContent = `${Math.floor(data.daily.data[3].apparentTemperatureMax)}° / ${Math.floor(data.daily.data[3].apparentTemperatureMin)}°`
-                fiveDaysFromNow.textContent = `${Math.floor(data.daily.data[4].apparentTemperatureMax)}° / ${Math.floor(data.daily.data[4].apparentTemperatureMin)}°`
-                sixDaysFromNow.textContent = `${Math.floor(data.daily.data[5].apparentTemperatureMax)}° / ${Math.floor(data.daily.data[5].apparentTemperatureMin)}°`
-                sevenDaysFromNow.textContent = `${Math.floor(data.daily.data[6].apparentTemperatureMax)}° / ${Math.floor(data.daily.data[6].apparentTemperatureMin)}°`
+                dayOneTemp.textContent = `${Math.floor(data.daily.data[0].temperatureHigh)}° / ${Math.floor(data.daily.data[0].temperatureLow)}°`
+                dayTwoTemp.textContent = `${Math.floor(data.daily.data[1].temperatureHigh)}° / ${Math.floor(data.daily.data[1].temperatureLow)}°`
+                dayThreeTemp.textContent = `${Math.floor(data.daily.data[2].temperatureHigh)}° / ${Math.floor(data.daily.data[2].temperatureLow)}°`
+                dayFourTemp.textContent = `${Math.floor(data.daily.data[3].temperatureHigh)}° / ${Math.floor(data.daily.data[3].temperatureLow)}°`
+                dayFiveTemp.textContent = `${Math.floor(data.daily.data[4].temperatureHigh)}° / ${Math.floor(data.daily.data[4].temperatureLow)}°`
+                daySixTemp.textContent = `${Math.floor(data.daily.data[5].temperatureHigh)}° / ${Math.floor(data.daily.data[5].temperatureLow)}°`
+                daySevenTemp.textContent = `${Math.floor(data.daily.data[6].temperatureHigh)}° / ${Math.floor(data.daily.data[6].temperatureLow)}°`
 
                 // Set daily summaries for coming week
              
                 // Day 1 - Today
                 const dayOneDay = document.getElementById('dayOneDay'); //Create a div to append date to the DOM
                 dayOneDay.innerHTML = dayjs(data.daily.data[0].time * 1000).format('dddd')//Set the HTML to show date from unix code taken from daily object
-               
-
-                // var skycons = new Skycons({"color": "pink"});
-                // skycons.add(document.getElementById("icon1"), Skycons.RAIN);
-                //  skycons.play();
-
-               
+            
+                let dayOneIcon = new Skycons({"color": "white"});
+                dayOneIcon.add(document.getElementById("dayOneIcon"), data.daily.data[0].icon);
+                dayOneIcon.play();
 
                 // Day 2
-                const dayTwoDiv = document.createElement('span')
-                dayTwoDiv.innerHTML = dayjs(data.daily.data[1].time * 1000).format('dddd')
-                twoDaysFromNow.appendChild(dayTwoDiv)
-                // Day 3
-                const dayThreeDiv = document.createElement('span')
-                dayThreeDiv.innerHTML = dayjs(data.daily.data[2].time * 1000).format('dddd')
-                threeDaysFromNow.appendChild(dayThreeDiv)
-                // Day 4
-                const dayFourDiv = document.createElement('span')
-                dayFourDiv.innerHTML = dayjs(data.daily.data[3].time * 1000).format('dddd')
-                fourDaysFromNow.appendChild(dayFourDiv)
-                // Day 5
-                const dayFiveDiv = document.createElement('span')
-                dayFiveDiv.innerHTML = dayjs(data.daily.data[4].time * 1000).format('dddd')
-                fiveDaysFromNow.appendChild(dayFiveDiv)
-                // Day 6
-                const daySixDiv = document.createElement('span')
-                daySixDiv.innerHTML = dayjs(data.daily.data[5].time * 1000).format('dddd')
-                sixDaysFromNow.appendChild(daySixDiv)
-                // Day 7
-                const daySevenDiv = document.createElement('span')
-                daySevenDiv.innerHTML = dayjs(data.daily.data[6].time * 1000).format('dddd')
-                sevenDaysFromNow.appendChild(daySevenDiv)
+                const dayTwoDay = document.getElementById('dayTwoDay'); 
+                dayTwoDay.innerHTML = dayjs(data.daily.data[1].time * 1000).format('dddd')
 
-                //or
-                // const { daily: { data: daysOfWeekWeather } } = data;
-                // const forecastHTML = daysOfWeekWeather.reduce((html, { summary, time }, i) => {
-                // const dateText = new Date(time * 1000).toString().slice(0, 3);
-                // return html += `<div class="day-${i + 1}">${summary}<span>${dateText}</span></div>`;
-                // }, '');
-                // document.querySelector('.weekly').innerHTML = forecastHTML;
+                let dayTwoIcon = new Skycons({"color": "white"});
+                dayTwoIcon.add(document.getElementById("dayTwoIcon"), data.daily.data[1].icon);
+                dayTwoIcon.play();
+
+                // Day 3
+                const dayThreeDay = document.getElementById('dayThreeDay'); 
+                dayThreeDay.innerHTML = dayjs(data.daily.data[2].time * 1000).format('dddd')
+
+                let dayThreeIcon = new Skycons({"color": "white"});
+                dayThreeIcon.add(document.getElementById("dayThreeIcon"), data.daily.data[2].icon);
+                dayThreeIcon.play();
+                // Day 4
+                const dayFourDay = document.getElementById('dayFourDay'); 
+                dayFourDay.innerHTML = dayjs(data.daily.data[3].time * 1000).format('dddd')
+
+                let dayFourIcon = new Skycons({"color": "white"});
+                dayFourIcon.add(document.getElementById("dayFourIcon"), data.daily.data[3].icon);
+                dayFourIcon.play();
+
+                // Day 5
+                const dayFiveDay = document.getElementById('dayFiveDay'); 
+                dayFiveDay.innerHTML = dayjs(data.daily.data[4].time * 1000).format('dddd')
+
+                let dayFiveIcon = new Skycons({"color": "white"});
+                dayFiveIcon.add(document.getElementById("dayFiveIcon"), data.daily.data[4].icon);
+                dayFiveIcon.play();
+
+                // Day 6
+                const daySixDay = document.getElementById('daySixDay'); 
+                daySixDay.innerHTML = dayjs(data.daily.data[5].time * 1000).format('dddd')
+
+                let daySixIcon = new Skycons({"color": "white"});
+                daySixIcon.add(document.getElementById("daySixIcon"), data.daily.data[5].icon);
+                daySixIcon.play();
+
+                // Day 7
+                const daySevenDay = document.getElementById('daySevenDay'); 
+                daySevenDay.innerHTML = dayjs(data.daily.data[6].time * 1000).format('dddd')
+
+                let daySevenIcon = new Skycons({"color": "white"});
+                daySevenIcon.add(document.getElementById("daySevenIcon"), data.daily.data[6].icon);
+                daySevenIcon.play();
                
                 
                 //Set Icon
