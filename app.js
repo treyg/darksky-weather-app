@@ -46,8 +46,28 @@ window.addEventListener('load', () => {
                 //locationTimezone.textContent = data.timezone
                 dailyDescription.textContent = data.hourly.summary
 
+                //Set daily summary section
+                const todayDetails = document.getElementById('todayDetails')
+                todayDetails.innerHTML = `Today's Details`
+                // Precipitation Section
+                const precipitation = document.getElementById('precipitation')
+                const precipSummary = document.getElementById('precipSummary')
+                precipitation.innerHTML = `${data.daily.data[0].precipProbability * 100}%`
+                precipSummary.innerHTML = `Chance of ${data.daily.data[0].precipType}`
+
+                // Wind Section
+                const wind = document.getElementById('wind')
+                const windSummary = document.getElementById('windSummary')
+                wind.innerHTML = `${Math.floor(data.daily.data[0].windGust)} MPH`
+                windSummary.innerHTML = `Wind gusts`
+
+                const dailyTemp = document.getElementById('dailyTemp')
+                //const windSummary = document.getElementById('windSummary')
+                dailyTemp.innerHTML = `${Math.floor(data.daily.data[0].temperatureHigh)}° / ${Math.floor(data.daily.data[0].temperatureLow)}°`
+                tempSummary.innerHTML = `Temperature`
+
+
                 // Set weekly elements fromt the DOM
-                dayOneTemp.textContent = `${Math.floor(data.daily.data[0].temperatureHigh)}° / ${Math.floor(data.daily.data[0].temperatureLow)}°`
                 dayTwoTemp.textContent = `${Math.floor(data.daily.data[1].temperatureHigh)}° / ${Math.floor(data.daily.data[1].temperatureLow)}°`
                 dayThreeTemp.textContent = `${Math.floor(data.daily.data[2].temperatureHigh)}° / ${Math.floor(data.daily.data[2].temperatureLow)}°`
                 dayFourTemp.textContent = `${Math.floor(data.daily.data[3].temperatureHigh)}° / ${Math.floor(data.daily.data[3].temperatureLow)}°`
@@ -56,14 +76,7 @@ window.addEventListener('load', () => {
                 daySevenTemp.textContent = `${Math.floor(data.daily.data[6].temperatureHigh)}° / ${Math.floor(data.daily.data[6].temperatureLow)}°`
 
                 // Set daily Icon, high and low for coming week
-                // Day 1 - Today
-                const dayOneDay = document.getElementById('dayOneDay'); //Create a div to append date to the DOM
-                dayOneDay.innerHTML = dayjs(data.daily.data[0].time * 1000).format('dddd')//Set the HTML to show date from unix code taken from daily object
-            
-                let dayOneIcon = new Skycons({"color": "white"});
-                dayOneIcon.add(document.getElementById("dayOneIcon"), data.daily.data[0].icon);
-                dayOneIcon.play();
-
+        
                 // Day 2
                 const dayTwoDay = document.getElementById('dayTwoDay'); 
                 dayTwoDay.innerHTML = dayjs(data.daily.data[1].time * 1000).format('dddd')

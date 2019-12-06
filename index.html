@@ -24,13 +24,28 @@
                 <div class="temperature-description">You need to enable location access to get the weather</div>
         <div class="daily-description"></div>
     </div>
-    <div class="weekly">
-            
-        <div class="oneDayFromNow">
-            <span id="dayOneDay"></span>
-            <canvas id="dayOneIcon" width="30" height="30"></canvas>
-            <span id="dayOneTemp"></span>
+
+    <!-- Daily Summary Section -->
+    <section class="today-section">
+        <p id="todayDetails"></p>
+        <div class="today-summary">
+            <div class ="precipitationSection">
+                <div id="precipitation"></div>
+                <div id="precipSummary"></div>
+            </div>
+            <div class ="windSection">
+                <div id="wind"></div>
+                <div id="windSummary"></div>
+            </div>
+            <div class ="tempSection">
+                    <div id="dailyTemp"></div>
+                    <div id="tempSummary"></div>
+                </div>
         </div>
+    </section>
+
+    <!-- Weekly Section -->
+    <div class="weekly">  
         <div class="twoDaysFromNow">
                 <span id="dayTwoDay"></span>
                 <canvas id="dayTwoIcon" width="30" height="30"></canvas>
