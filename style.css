@@ -15,6 +15,7 @@ body {
     color: white;
     background-size: cover;
     background-color: rgba(5, 5, 5, 0.856);
+    align-content: center;
 }
 
 h1 {
@@ -26,8 +27,7 @@ h1 {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-top: 10%;
-
+    margin-top: 3em;
 }
 
 .current-date {
@@ -76,7 +76,7 @@ h1 {
 }
 
 .weekly { 
-    width: 100%;
+    width: 92%;
     display: flex;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -158,4 +158,12 @@ h1 {
 .bg-thunderstorm {
     background-image: url('https://i.pinimg.com/originals/ce/4c/e3/ce4ce321f2729bdaf2c2f0272987301a.jpg');
 }
+
+
+  
+  @media (min-width: 595px) {
+    .weekly {
+      width: 500px;
+    }
+  }
 
