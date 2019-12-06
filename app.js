@@ -76,7 +76,8 @@ window.addEventListener('load', () => {
                 daySevenTemp.textContent = `${Math.floor(data.daily.data[6].temperatureHigh)}° / ${Math.floor(data.daily.data[6].temperatureLow)}°`
 
                 // Set daily Icon, high and low for coming week
-        
+                const weeklyHeader = document.getElementById('weeklyHeader')
+                weeklyHeader.innerHTML = `Weekly Summary`
                 // Day 2
                 const dayTwoDay = document.getElementById('dayTwoDay'); 
                 dayTwoDay.innerHTML = dayjs(data.daily.data[1].time * 1000).format('dddd')
