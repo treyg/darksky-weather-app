@@ -16,6 +16,11 @@ body {
     background-size: cover;
     background-color: rgba(5, 5, 5, 0.856);
     align-content: center;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1 {
@@ -117,6 +122,10 @@ h1 {
 
 .bg-cloudy {
     background-image: url('https://images.unsplash.com/photo-1479688895406-3f032f15f0ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .bg-partly-cloudy-day {
