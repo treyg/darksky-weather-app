@@ -61,12 +61,11 @@ h1 {
     align-items: center;
     cursor: pointer;
     border: 2px solid blue;
-    margin-top: 10px;
-    margin-bottom: 10px;
+   
 }
 
 .degree-section span {
-    margin: .5em;
+    margin-left: .5em;
     font-size: 3.5em;
 }
 
@@ -85,6 +84,7 @@ h1 {
     font-size: 1.6em;
     text-align: center;
     margin-bottom: 7em;
+    
 }
 
 /* today summary section */
