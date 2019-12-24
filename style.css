@@ -8,6 +8,7 @@
 body {
     height: 100vh;
     display: flex;
+    display: -webkit-flex;
     background-size: cover;
     flex-direction: column;
     align-items: center;
