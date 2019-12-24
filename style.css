@@ -59,7 +59,9 @@ h1 {
     display: flex;
     align-items: center;
     cursor: pointer;
-    
+    border: 2px solid blue;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .degree-section span {
@@ -69,10 +71,12 @@ h1 {
 
 .degree-section h2 {
     font-size: 7em;
+    
 }
 
 .temperature-description {
     font-size: 3em;
+    border: 2px solid pink;
 }
 
 .daily-description {
