@@ -45,33 +45,34 @@ h1 {
 }
 
 .temperature {
-    height: 30vh;
     width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    display: inline-block;
     border: 2px solid red;
+    text-align: center;
 }
 
 
 
 .degree-section {
-    display: flex;
-    align-items: center;
+    display: inline-block;
+    left: auto;
+    right: auto;
     cursor: pointer;
     border: 2px solid blue;
    
 }
 
 .degree-section span {
+    display: inline-block;
     margin-left: .5em;
     font-size: 3.5em;
 }
 
 .degree-section h2 {
+    display: inline-block;
     font-size: 7em;
-    
+    border: 2px solid orange;
+    margin: auto;
 }
 
 .temperature-description {
