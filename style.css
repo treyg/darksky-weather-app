@@ -81,7 +81,6 @@ h1 {
 }
 
 /* today summary section */
-
 .today-section {
     width: 92%;
     display: flex;
@@ -98,6 +97,7 @@ h1 {
     padding: .8em 1.2em;
     margin-top: auto;
     border-bottom: .1em solid rgba(56, 56, 56, 0.24);
+    letter-spacing: 1.2px;
 }
 
 
@@ -130,6 +130,7 @@ h1 {
     padding: .8em 1.2em;
     margin-top: auto;
     border-bottom: .1em solid rgba(56, 56, 56, 0.24);
+    letter-spacing: 1.2px;
 }
 
 .weekly { 
