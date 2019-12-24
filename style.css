@@ -34,6 +34,7 @@ h1 {
     align-items: center;
     justify-content: space-between;
     margin-top: 3em;
+    
 }
 
 .current-date {
@@ -49,7 +50,9 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    -webkit-justify-content: flex-start;
     align-items: center;
+    border: 2px solid red;
 }
 
 
