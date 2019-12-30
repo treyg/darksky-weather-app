@@ -110,6 +110,7 @@ h1 {
     flex-direction: row;
     justify-content: space-between;
     padding: 2em 1.5em;
+    
 }
 
 .precipitationSection, .windSection, .tempSection {
@@ -117,6 +118,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     border-right: .1em solid rgba(56, 56, 56, 0.24);
+
 }
 
 #precipitation, #wind, #dailyTemp {
@@ -126,6 +128,7 @@ h1 {
 
 #precipSummary, #windSummary, #tempSummary {
     font-size: 1.3em;
+    letter-spacing: normal;
 }
 
 /* Weekly section  */
